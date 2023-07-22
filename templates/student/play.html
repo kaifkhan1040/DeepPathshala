@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- /header -->
+<!-- Modal -->
+
+{% block header %}
+
+    <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+
+
+
+    <!-- page title -->
+    <section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-inline custom-breadcrumb">
+                        <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="#">{{ course }}</a>
+                        </li>
+                        <li class="list-inline-item text-white h3 font-secondary "></li>
+                    </ul>
+                    <p class="text-lighten">{{ course.decsription }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="container">
+    <h3 align="center">{{ activity.activity_name }}</h3>
+    <div class="row ">
+        <div class="col-md-9 ">
+
+            {#            <video width="830px" height="500px" controls class="shadow-lg p-3 mb-5 bg-body rounded card sticky-top fix">#}
+            {#                <source src="{{ activity.video.url }}" type="video/mp4">#}
+            {#                <source src="movie.ogg" type="video/ogg">#}
+            {#                Your browser does not support the video tag.#}
+            {#            </video>#}
+
+            <video
+                    id="my-video"
+                    class="video-js shadow-lg p-3 mb-5 bg-body rounded card sticky-top fix"
+                    controls
+                    preload="auto"
+                    width="830px"
+                    height="500px"
+                    poster="{{ course.course_image }}"
+                    data-setup="{}"
+            >
+                <source src="{{ activity.video.url }}" type="video/mp4"/>
+                <source src="MY_VIDEO.webm" type="video/webm"/>
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank"
+                    >supports HTML5 video</a
+                    >
+                </p>
+            </video>
+        </div>
+        <div class="col-md-3" data-spy="scroll" data-target="#navbar-example">
+
+            <div class="accordion shadow-lg p-3 mb-5 bg-body rounded card sticky-top fix" id="accordionExample">
+                {% for i in topic %}
+                    <div class="card">
+                    <div class="card-header " id="headingOne{{ i.id }}">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left " type="button" data-toggle="collapse"
+                                    data-target="#collapseOne{{ i.id }}" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                {{ i.topic }}
+                            </button>
+                        </h2>
+                    </div>
+
+                    {% if i in topiclist %}
+                        <div id="collapseOne{{ i.id }}" class="collapse show" aria-labelledby="headingOne{{ i.id }}"
+                             data-parent="#accordionExample">
+                    {% else %}
+                        <div id="collapseOne{{ i.id }}" class="collapse " aria-labelledby="headingOne{{ i.id }}"
+                             data-parent="#accordionExample">
+                    {% endif %}
+                <div class="card-body">
+                    {{ i.topic.child }}
+                    {% for j in listact %}
+                        {% for pk in j %}
+                            {% autoescape off %}
+                                {% if pk.topic == i %}
+                                    <a href="/student/play/{{ pk.id }}">{{ pk }}</a> <br>
+                                {% endif %}
+                            {% endautoescape %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 shadow-lg p-3 mb-5 bg-body rounded card sticky-top fix">
+                <h3 align="center"><strong>Question and Answer Section.</strong></h3>
+            {% if question_ans %}
+                <div class="border px-5 py-4 fs-15" style=" display: block; height: 100px; overflow-y: scroll;">
+                    {#            <div class="col-md-9" style=" scroll;">#}
+                    {% for i in question_ans %}
+                        {#                        {{ i.username }}---{{ i.question }}#}
+                        <div class="row">
+                        <div class="col-md-2">
+
+{#                            <img src="/media/profile_image/wp4676569-4k-pc-wallpapers.jpg"#}
+{#                                 class="img-circle img-responsive" width="50" height="50" alt=""#}
+{#                                 style="border-radius:50%;">#}
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div class="col-md-10" style="float: right">
+                            <div class="mic-info">
+                                By:
+                                <a href="#">
+                                    {{ i.username }}
+                                </a> &nbsp;&nbsp;
+                            </div>
+                            <div class="comment-text">
+                                {{ i.question }}
+                            </div><br>
+                        </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+                <div class="card">
+
+                </div>
+                <div row="3"></div>
+                <form method="post">{% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Question</label>
+                        <input type="text" class="form-control" name="question" id="exampleInputEmail1"
+                               aria-describedby="emailHelp" placeholder="Ask Your Question Here.">
+
+                    </div>
+                    {#                    <button type="button" class="btn btn-success">Ask Question</button>#}
+                    <input type="submit" class="btn btn-success" value="Ask Question">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+    <script>
+        $('body').scrollspy({target: '#navbar-example'})
+    </script>
+{% endblock %}

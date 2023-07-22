@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- /header -->
+<!-- Modal -->
+{% block content %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+
+
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+<!-- page title -->
+  <section class="page-title-section overlay" data-background="{% static 'images/backgrounds/page-title.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb">
+            <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">About Us</a></li>
+            <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+          </ul>
+          <p class="text-lighten">Our courses offer a good compromise between the continuous assessment favoured by some universities and the emphasis placed on final exams by others.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /page title -->
+
+
+<!-- about -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <img class="img-fluid w-100 mb-4" src="{% static 'images/about/about-page.jpg' %}" alt="about image">
+          <h2 class="section-title">ABOUT OUR JOURNY</h2>
+          <p>Deep Pathshala is suitable for those who cannot visit or obtain the traditional education
+            method for one reason or the other. Nearly 6.1 million college students are currently
+            attending online courses, and this number is growing by around 30 percent yearly.
+          </p>
+          <p>
+            With Deep Pathshala, we don't need to travel to a different city or commute long distances.
+            We can stay where we are and keep our current job while we work toward improving our
+            career with an online degree. Online education also helps digital nomads—someone who
+            espouses a technology-enabled or location-independent lifestyle. We can watch lectures and
+            complete our coursework wherever we are.
+          </p>
+          <p>
+            Deep Pathshala's potential advantages involve increased educational access; it provides a
+            high-quality learning opportunity, improves student outcomes and skills, and expands
+            educational choice options. Therefore, location, time, and quality are no longer considered
+            factors in seeking degree courses or higher education because of online education
+          </p>
+          <p>
+            Teachers and professors optimise the timelessness and focus of the learning curriculum
+            while students are able to fit learning time into their hectic schedules. Deep Pathshala offers
+            extensive benefits to students by giving a manageable schedule, student enhancement and
+            augmented education access and choice. 
+            Deep Pathshala allows one to learn innovative approaches through the internet and
+            therefore become more skilful. In online education, if there are any variations in the
+            syllabus, updates can be done instantly compared to conventional means of education.
+          </p>
+
+          <h2 class="section-title mt-5">Impact of online education in Lockdown</h2>
+          <p>COVID-19 has closed schools around the world. Globally, more than 1.2 billion
+            children are out of the classroom. As a result, education has changed considerably
+            with the rise of e-learning, under which teaching is carried out on digital platforms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /about -->
+
+
+<!-- vission Start -->
+  <section>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-8">
+          <h2 class="section-title">Our Vission</h2>
+          <p>
+            Rural areas where students have to travel a great distance to get to class can save time
+            and money by doing online classes. For example, a child of a farmer can help the family
+            out in the morning with the farming chores then go to an online class later on. Rural kids
+            may also take additional educational classes online that their school does not
+            </p>
+        </div>
+        <div class="col-md-4">
+          <div class="vission-img">
+            <img class="img-fluid" src="{% static '/images/blog/post-1.jpg' %}" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!-- /vission End -->
+
+
+<!-- funfacts -->
+  <section class="section-sm bg-primary mt-5">
+    <div class="container">
+      <div class="row">
+        <!-- funfacts item -->
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          <div class="text-center">
+            <i class="ti-user" style="font-size: 50px; color: #1e1e4b;"></i>
+            <h2 class="count text-white mt-4" data-count="20">0</h2>
+            <h5 class="text-white">TEACHERS</h5>
+          </div>
+        </div>
+        <!-- funfacts item -->
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          <div class="text-center">
+            <i class="ti-book" style="font-size: 50px; color: #1e1e4b;"></i>
+            <h2 class="count text-white mt-4" data-count="33">0</h2>
+            <h5 class="text-white">COURSES</h5>
+          </div>
+        </div>
+        <!-- funfacts item -->
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          <div class="text-center">
+            <i class="ti-bar-chart" style="font-size: 50px; color: #1e1e4b;"></i>
+            <h2 class="count text-white mt-4" data-count="100">0</h2>
+            <h5 class="text-white">STUDENTS</h5>
+          </div>
+        </div>
+        <!-- funfacts item -->
+        <div class="col-md-3 col-sm-6 mb-4 mb-md-0">
+          <div class="text-center">
+            <i class="ti-heart" style="font-size: 50px; color: #1e1e4b;"></i>
+            <h2 class="count text-white mt-4" data-count="337">0</h2>
+            <h5 class="text-white">SATISFIED CLIENT</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /funfacts -->
+
+
+<!-- success story -->
+  <section class="section bg-cover" data-background="{% static 'images/backgrounds/success-story.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-sm-4 position-relative success-video">
+          <a class="play-btn venobox" href="https://youtu.be/nA1Aqp0sPQo" data-vbtype="video">
+            <i class="ti-control-play"></i>
+          </a>
+        </div>
+        <div class="col-lg-6 col-sm-8">
+          <div class="bg-white p-5">
+            <h2 class="section-title">Success Stories</h2>
+            <p>
+              In the changing era, where everything is going digital today, the field of education is also not
+              behind in this matter. The Pandemic like Corona Virus (Covid-19) has affected almost all
+              areas of human life, including education. Therefore, there is a need to promote online
+              education today
+            </p>
+            <p>
+              The "Deep Pathshala" to reduce the loss in education in this era of the Covid-19 Pandemic,
+              which underscores the growing importance of online education. In fact, the importance of
+              online education will continue to increase in the present as well as in the future, but we
+              should keep in mind that there are some practical drawbacks along with the benefits of
+              online education, due to which it needs to be adopted carefully.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- /success story -->
+
+<!-- teachers 
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <h2 class="section-title">Our Teachers</h2>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/teachers/teacher-1.jpg" alt="teacher">
+            <div class="card-body">
+              <a href="teacher-single.html">
+                <h4 class="card-title">Jacke Masito</h4>
+              </a>
+              <div class="d-flex justify-content-between">
+                <span>Teacher</span>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/teachers/teacher-2.jpg" alt="teacher">
+            <div class="card-body">
+              <a href="teacher-single.html">
+                <h4 class="card-title">Clark Malik</h4>
+              </a>
+              <div class="d-flex justify-content-between">
+                <span>Teacher</span>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
+          <div class="card border-0 rounded-0 hover-shadow">
+            <img class="card-img-top rounded-0" src="images/teachers/teacher-3.jpg" alt="teacher">
+            <div class="card-body">
+              <a href="teacher-single.html">
+                <h4 class="card-title">John Doe</h4>
+              </a>
+              <div class="d-flex justify-content-between">
+                <span>Teacher</span>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                  <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+/teachers -->
+
+
+{% endblock  %}
